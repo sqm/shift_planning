@@ -14,11 +14,15 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install shift_planning
+    $ gem install shift_planning_client
 
 ## Usage
 
-Call client.<api_namespace>.<method>_<endpoint>(required_arg_1, required_arg_2 [, optional_params_hash])
+General usage:
+
+```
+client.<api_namespace>.<method>_<endpoint>(required_arg_1, required_arg_2 [, optional_params_hash])
+```
 
 ```ruby
   client = ShiftPlanning::Client.new(your_api_key)
@@ -39,6 +43,7 @@ Rescue from api errors with:
     ...
   end
 ```
+Api map described in lib/shift_planning/client.rb
 For more info follow http://www.shiftplanning.com/api/
 
 ## Contributing
