@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "shift_planning"
   spec.version       = ShiftPlanning::VERSION
   spec.authors       = ["Askar Zinurov"]
-  spec.email         = ["askar.zinurov@flatstack.com"]
+  spec.email         = ["mail@asktim.ru"]
   spec.summary       = %q{Client library to www.shiftplanning.com}
   spec.description   = %q{}
   spec.homepage      = "https://github.com/AskarZinurov/shift_planning"
