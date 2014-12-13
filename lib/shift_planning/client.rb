@@ -218,6 +218,19 @@ class ShiftPlanning::Client
       m.update :notice, [:id]
       m.delete :notice, [:id]
     end
+
+    api_module :payroll do |m|
+      m.get :report, [:type]
+
+      m.get :enhancedreport
+
+      m.get :ratecards
+
+      m.get :ratecard, [:id]
+      m.create :ratecard, [:name]
+      m.update :ratecard, [:id]
+      m.delete :ratecard, [:id]
+    end
   end
 
   def api_module(name, &block)
