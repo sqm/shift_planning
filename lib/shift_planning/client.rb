@@ -231,6 +231,22 @@ class ShiftPlanning::Client
       m.update :ratecard, [:id]
       m.delete :ratecard, [:id]
     end
+
+    api_module :availability do |m|
+      m.get :available, [:start_date]
+
+      m.get :weekly
+      m.update :weekly, [:flag]
+      m.delete :weekly, [:start_time, :end_time]
+
+      m.get :future
+      m.create :future, [:start_date]
+      m.update :future, [:id, :flag]
+      m.delete :future, [:id]
+
+      m.get :approve, [:type]
+      m.update :approve, [:user, :type, :action]
+    end
   end
 
   def api_module(name, &block)
