@@ -196,6 +196,28 @@ class ShiftPlanning::Client
 
       m.get :publish_note, [:id]
     end
+
+    api_module :messaging do |m|
+      m.get :messages
+
+      m.get :message, [:id]
+      m.create :message, [:subject, :message, :to]
+      m.update :message, [:id]
+      m.delete :message, [:id]
+
+      m.create :shift, [:subject, :message, :id]
+
+      m.get :wall
+      m.create :wall, [:post]
+      m.delete :wall, [:id, :delete]
+
+      m.get :notices
+
+      m.get :notice, [:id]
+      m.create :notice
+      m.update :notice, [:id]
+      m.delete :notice, [:id]
+    end
   end
 
   def api_module(name, &block)
