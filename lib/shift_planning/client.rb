@@ -276,6 +276,28 @@ class ShiftPlanning::Client
       m.get :group_perms
       m.update :group_perms, [:group_perms]
     end
+
+    api_module :reports do |m|
+      m.get :schedule, [:start_date, :end_date, :type]
+
+      m.get :budget, [:start_date, :end_date]
+
+      m.get :timesheets, [:start_date, :end_date, :type]
+
+      m.get :employee, [:start_date, :end_date, :type]
+
+      m.get :custom, [:fields, :start_date, :end_date, :type]
+
+      m.get :daily_peak_hours_new, [:start_date, :end_date]
+
+      m.get :daily_peak_hours, [:start_date, :end_date]
+
+      m.get :google, [:start_date, :end_date]
+
+      m.get :workunits
+
+      m.get :mu_daily_report
+    end
   end
 
   def api_module(name, &block)
