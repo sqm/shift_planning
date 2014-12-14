@@ -245,7 +245,36 @@ class ShiftPlanning::Client
       m.delete :future, [:id]
 
       m.get :approve, [:type]
+      m.create :approve
       m.update :approve, [:user, :type, :action]
+    end
+
+    api_module :admin do |m|
+      m.get :settings
+      m.update :settings
+
+      m.get :details
+      m.update :details
+
+      m.get :files
+
+      m.get :file, [:id]
+      m.create :file, [:filename, :filedata, :filelength, :mimetype]
+      m.update :file, [:id]
+      m.delete :file, [:id]
+
+      m.get :backups
+
+      m.get :backup, [:id]
+      m.create :backup, [:filename, :filedata, :filelength, :mimetype]
+      m.delete :backup, [:id]
+
+      m.get :nrequests
+
+      m.get :business
+
+      m.get :group_perms
+      m.update :group_perms, [:group_perms]
     end
   end
 
