@@ -331,6 +331,34 @@ class ShiftPlanning::Client
 
       m.get :tutorial, [:tutorial_id]
     end
+
+    api_module :group do |m|
+      m.get :accounts
+      m.create :accounts, [:accounts]
+
+      m.get :account, [:id]
+      m.create :account
+      m.update :account, [:id]
+      m.delete :account, [:id]
+
+      m.create :accountsplit, [:location, :main_user_id]
+
+      m.get :reports, [:start_date, :end_date, :type]
+    end
+
+    api_module :sales do |m|
+      m.get :budgets, [:start_date, :end_date]
+
+      m.get :budget, [:start_date, :end_date]
+      m.create :budget, [:start_date, :end_date]
+      m.update :budget, [:start_date, :end_date]
+      m.delete :budget, [:start_date, :end_date]
+    end
+
+    api_module :dashboard do |m|
+      m.get :onnow
+      m.get :notifications
+    end
   end
 
   def api_module(name, &block)
