@@ -298,6 +298,39 @@ class ShiftPlanning::Client
 
       m.get :mu_daily_report
     end
+
+    api_module :training do |m|
+      m.get :sections
+
+      m.get :section, [:id]
+      m.create :section, [:title]
+      m.update :section, [:id, :title]
+      m.delete :section, [:id]
+
+      m.get :modules
+
+      m.get :module, [:id]
+      m.create :module, [:title]
+      m.update :module, [:id]
+      m.delete :module, [:id]
+
+      m.update :complete, [:id]
+
+      m.update :reorder, [:mode]
+
+      m.get :digital_signature, [:module_id]
+
+      m.get :comments, [:module_id, :type]
+      m.update :comments, [:module_id, :type]
+
+      m.update :sync, [:id]
+
+      m.update :quiz, [:answer]
+
+      m.update :multiassign, [:assignments, :modules, :mode]
+
+      m.get :tutorial, [:tutorial_id]
+    end
   end
 
   def api_module(name, &block)
