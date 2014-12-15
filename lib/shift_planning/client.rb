@@ -21,7 +21,7 @@ class ShiftPlanning::Client
       m.get :employees
       m.create :employees
 
-      m.get :employee, [:id]
+      m.get :employee
       m.create :employee
       m.update :employee, [:id]
       m.delete :employee, [:id]
