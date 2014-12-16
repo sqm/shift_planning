@@ -31,6 +31,10 @@ class ShiftPlanning::Connection
     end
   end
 
+  def authenticated?
+    @token && !@token.empty?
+  end
+
   private
 
   def parse_data(response_data, &block)

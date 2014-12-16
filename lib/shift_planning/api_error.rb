@@ -1,4 +1,6 @@
 class ShiftPlanning::ApiError < Exception
+  attr_reader :code
+
   CODES = {
     -3 => 'Flagged API Key - Pemanently Banned',
     -2 => 'Flagged API Key - Too Many invalid access attempts - contact us',
