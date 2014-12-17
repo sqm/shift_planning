@@ -6,7 +6,7 @@ Ruby client gem for http://www.shiftplanning.com
 
 Add this line to your application's Gemfile:
 
-    gem 'shift_planning'
+    gem 'shift_planning_client'
 
 And then execute:
 
