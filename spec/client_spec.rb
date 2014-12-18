@@ -1,4 +1,4 @@
-require "shift_planning"
+require 'spec_helper'
 
 describe ShiftPlanning::Client do
   context 'staff' do
@@ -18,11 +18,11 @@ describe ShiftPlanning::Client do
       end
 
       it 'should return skills' do
-        client.staff.get_skills.should == ''
+        expect(client.staff.get_skills).to eq('')
       end
 
       it 'can logout' do
-        client.staff.get_logout.should == ''
+        expect(client.staff.get_logout).to eq('')
       end
     end
   end

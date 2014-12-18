@@ -34,6 +34,18 @@ client.<api_namespace>.<method>_<endpoint>(required_arg_1, required_arg_2 [, opt
   client.staff.get_logout
 ```
 
+or
+
+```ruby
+  shift_planning = ShiftPlanning::AuthenticationKeeper.new('api_key', 'username', 'password')
+  shift_planning.run do |c|
+    c.timeclock.get_clockin()
+
+    ...
+
+  end
+```
+
 Rescue from api errors with:
 
 ```ruby
@@ -45,6 +57,12 @@ Rescue from api errors with:
 ```
 Api map described in lib/shift_planning/client.rb
 For more info follow http://www.shiftplanning.com/api/
+
+To run specs:
+
+```bash
+SHIFT_PLANNING_KEY='key' SHIFT_PLANNING_STAFF_USERNAME='username' SHIFT_PLANNING_STAFF_PASSWORD='password' rspec spec
+```
 
 ## Contributing
 
