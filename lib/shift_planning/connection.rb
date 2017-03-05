@@ -4,7 +4,7 @@ class ShiftPlanning::Connection
   def initialize(key)
     @key = key
     @token = nil
-    @http = Faraday.new(url: "http://www.shiftplanning.com") do |conn|
+    @http = Faraday.new(url: "https://www.humanity.com") do |conn|
       conn.request :url_encoded
 
       conn.response :json
